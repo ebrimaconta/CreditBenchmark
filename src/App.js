@@ -135,6 +135,36 @@ function App() {
           <div className='label-SP'></div>
         </div>
       </div>
+      <table>
+        <tr>
+          <th>Date</th>
+          <th>PD</th>
+          <th>PDMedianProxyBps</th>
+          <th>Rating</th>
+          <th>LGD</th>
+          <th>LGDContributionCount</th>
+        </tr>
+        {dateFunc('Yes').map((value) => {
+          return (
+            <tr>
+              <td>{value.date}</td>
+              <td>{value.PD == null ? 'null' : value.PD}</td>
+              <td>
+                {value.PDMedianProxyBps == null
+                  ? 'null'
+                  : value.PDMedianProxyBps}
+              </td>
+              <td>{value.Rating == null ? 'null' : value.Rating}</td>
+              <td>{value.LGD == null ? 'null' : value.LGD}</td>
+              <td>
+                {value.LGDContributionCount == null
+                  ? 'null'
+                  : value.LGDContributionCount}
+              </td>
+            </tr>
+          );
+        })}
+      </table>
     </div>
   );
 }
