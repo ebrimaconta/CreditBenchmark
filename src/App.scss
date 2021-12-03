@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    flex-direction: column;
     .chart {
         width: 1000px
     }
@@ -9,5 +10,11 @@
     }
     .box-latest {
         margin: 20px 0px;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .container {
+        flex-direction: row;
     }
 }
